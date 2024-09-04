@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/dist/index.js",  // Archivo de entrada compilado
+            "outFiles": [
+                "${workspaceFolder}/dist/**/*.js"  // Asegúrate de que los archivos de salida están correctamente especificados
+            ],
+            "preLaunchTask": "tsc: build - tsconfig.json",  // Pre-lanzar tarea para compilar TypeScript
+            "sourceMaps": true  // Habilitar source maps para depuración
+        }
+    ]
+}
