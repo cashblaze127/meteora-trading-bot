@@ -6,6 +6,9 @@ import { PublicKey } from "@solana/web3.js";
 export const displayMainMenu = async (ctx) => {
   const telegram_id = ctx.from.id;
   const wallet = new PublicKey(ctx.session.walletAddress);
+  const formattedWalletAddress = `${wallet.toBase58().slice(0, 4)}...${wallet
+    .toBase58()
+    .slice(-4)}`;
 
   // Inicializamos los valores de balance y posiciones
   ctx.session.mainMenu.balance = "";
@@ -59,6 +62,23 @@ export const displayMainMenu = async (ctx) => {
       });
       ctx.session.mainMenu.messageId = sentMessage.message_id;
     }
+
+    // Después de enviar el mensaje inline, envía el botón `web_app` en el teclado regular
+    const webAppUrl = "https://meteora-react-dynamic-wallet.vercel.app/";
+    await ctx.reply("🔌 Wallet updated", {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: `☄️ Wallet connected ${formattedWalletAddress}`,
+              web_app: { url: webAppUrl },
+            },
+          ],
+        ],
+        resize_keyboard: true,
+        one_time_keyboard: false,
+      },
+    });
   } catch (error) {
     console.error("Failed to edit or send message:", error);
   }

@@ -148,7 +148,23 @@ export async function initializeBot(): Promise<Telegraf<MyContext>> {
 
       if (message === "logout") {
         ctx.session.walletAddress = undefined;
-        ctx.reply("✅ Logout");
+        const webAppUrl = "https://meteora-react-dynamic-wallet.vercel.app/";
+        await ctx.reply("✅ Logout", {
+          reply_markup: {
+            keyboard: [
+              [
+                {
+                  text: "☄️ Connect wallet",
+                  web_app: {
+                    url: webAppUrl,
+                  },
+                },
+              ],
+            ],
+            resize_keyboard: true,
+            one_time_keyboard: false,
+          },
+        });
       }
 
       // Check if the message contains a Solscan URL
