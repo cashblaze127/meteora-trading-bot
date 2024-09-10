@@ -3,8 +3,8 @@
 Clone the repository and install the dependencies
 
 ```bash
-git clone https://github.com/PeeterGuru/meteora-lp-bot.git
-cd meteora-lp-bot
+git clone https://github.com/PeeterGuru/meteora-lp-army-bot.git
+cd meteora-lp-army-bot/meteora-lp-bot
 npm install
 npm run start
 ```
