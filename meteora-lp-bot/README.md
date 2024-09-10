@@ -15,6 +15,5 @@ Create the .env file with the following data:
 
 ```bash
 BOT_TOKEN
-USER_PRIVATE_KEY
 RPC_URL
 ```
