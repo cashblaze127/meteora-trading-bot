@@ -106,7 +106,7 @@ export async function initializeBot(): Promise<Telegraf<MyContext>> {
     return bot;
   }
 
-  bot = new Telegraf<MyContext>(process.env.BOT_TOKEN);
+  bot = new Telegraf<MyContext>(process.env.BOT_TOKEN_ADDRESS);
 
   const stage = new Scenes.Stage<MyContext>(
     [

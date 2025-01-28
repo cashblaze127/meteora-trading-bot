@@ -13,7 +13,7 @@ exports.getBalance = getBalance;
 exports.getTokenBalance = getTokenBalance;
 const web3_js_1 = require("@solana/web3.js");
 const spl_token_1 = require("@solana/spl-token");
-const RPC_URL = process.env.RPC_URL;
+const RPC_URL = process.env.SOL_RPC_URL;
 const connection = new web3_js_1.Connection(RPC_URL, "confirmed");
 /*const wallet = user.publicKey;*/
 function getBalance(wallet) {

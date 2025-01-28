@@ -21,7 +21,7 @@ import Decimal from "decimal.js";
 import { formatDecimalTokenBalance, getTokenData } from "../utils/solana";
 
 const BASIS_POINT_MAX = 10000;
-const RPC_URL = process.env.RPC_URL;
+const RPC_URL = process.env.SOL_RPC_URL;
 
 const connection = new Connection(RPC_URL, "confirmed");
 

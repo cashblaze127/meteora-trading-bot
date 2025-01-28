@@ -7,7 +7,7 @@ import {
 import { getAccount, getMint } from "@solana/spl-token";
 import { bs58 } from "@coral-xyz/anchor/dist/cjs/utils/bytes";
 
-const RPC_URL = process.env.RPC_URL;
+const RPC_URL = process.env.SOL_RPC_URL;
 
 const connection = new Connection(RPC_URL, "confirmed");
 /*const wallet = user.publicKey;*/
